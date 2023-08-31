@@ -607,7 +607,7 @@
   }
   
   .task-item{
-    margin-left:-0px;
+    margin-left:60px;
     width: 220px;
     padding:4px;
     font-size: 11px;
@@ -626,6 +626,7 @@
   }
   .sort-filter-buttons{
     margin-bottom: 6px;
+    margin-left: 60px;
   }
   .filter-buttons{
     padding: 2px 5px;
@@ -667,7 +668,7 @@
    }
 
   .dark-mode-toggle {
-    margin-left: -0px;
+    margin-left:0px;
     padding: 2px 5px;
     background-color: #007bff;
     position:static;
