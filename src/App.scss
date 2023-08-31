@@ -43,14 +43,21 @@
   color: #fff;
 }
 
+.task-list{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
 
 .task-item {
-  margin:auto;
+  margin-left:150px;
   border: 1px solid #ddd;
+  width:600px;
   padding: 10px;
-  margin: 10px 0;
   border-radius: 4px;
   transition: background-color 0.2s ease-in-out;
+
 }
 
 .task-item h3 {
@@ -62,9 +69,12 @@
   font-size: 14px;
   color: #3d3a3a;
 }
+
+.sort-filter-buttons{
+  margin-left:0px;
+}
 .filter-buttons{
   margin:10px;
-  
   padding: 5px 10px;
   background-color: #007bff;
   color: #fff;
@@ -74,9 +84,9 @@
 }
 
 .dark-mode-toggle{
-  margin: 10px;
+  margin-left: 175px;
   padding: 5px 10px;
-  background-color: #2380e2;
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -99,7 +109,6 @@
   background-color: #63eb9c;
 }
 
-
 .modal {
   display: none;
   position: fixed;
@@ -111,7 +120,6 @@
   align-items: center;
   justify-content: center;
 }
-
 .modal.open {
   display: flex;
 }
@@ -120,8 +128,9 @@
   background-color: #fff;
   padding: 20px;
   border-radius: 4px;
-  width: 80%;
-  max-width: 400px;
+  width: 100%;
+  max-width: 600px;
+  height:340px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -133,7 +142,27 @@
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+.headtask{
+  width: 100%;
+  max-width:560px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+}
 
+.modal textarea {
+  width: 100%;
+  padding: 10px;
+  max-width:560px;
+  height:200px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
 .modal button {
   padding: 5px 10px;
   background-color: #007bff;
@@ -143,7 +172,9 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+  font-size: 12px;
 }
+
 
 .modal button.cancel {
   background-color: #ccc;
@@ -154,9 +185,6 @@
   background-color: #0056b3;
 }
 
-.sidebar-item {
-  margin-bottom: 20px;
-}
 .sidebar-buttons{
   background-color: #007bff;
   color: #fff;
@@ -170,7 +198,8 @@
   background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  width:200px;
+  border-radius: 0px;
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
@@ -189,7 +218,7 @@
   margin-right:100px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .dark-mode .sidebar {
@@ -212,21 +241,33 @@
 
 
 
-@media screen and (max-width: 768px) {
+@media (min-width: 561px) and (max-width: 868px) {
   .app {
     display: flex;
     flex-direction: column; 
     align-items: center;
-    font-size: 10px;
+    font-size: 12px;
   }
   
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+  }
   .modal form {
+    margin-left:50px;
     background-color: #fff;
     padding: 20px;
     border-radius: 4px;
-    width: 50%;
-    height:160px;
-    max-width: 200px;
+    width: 100%;
+    height:320px;
+    max-width: 450px;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
   }
   
@@ -237,17 +278,35 @@
     margin-bottom: 5px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 12px;
+    font-size: px;
   }
-  .sidebar-button{
-    width: 40px;
-    padding:2px;
-    font-size: 10px;
+  
+  .headtask{
+    width: 100%;
+    max-width:500px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
   }
+  .modal textarea {
+    width: 100%;
+    padding: 10px;
+    max-width:500px;
+    height:200px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+ 
   .task-item{
     width: 400px;
     padding:4px;
-    font-size: 12px;
+    font-size: 15px;
+   
   }
   .task-item button {
     padding: 2px 5px;
@@ -258,7 +317,10 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
-    font-size: 10px;
+    font-size: 12px;
+  }
+  .sort-filter-buttons{
+    margin-left:67px;
   }
   .filter-buttons{
     padding: 2px 5px;
@@ -269,29 +331,118 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .sidebar-buttons{
-    width: 40px;
+    width: 60px;
     padding:2px;
+    font-size: 11px;
+       
+  }
+  .sidebar-button{
+    padding:0px;
     font-size: 10px;
-    display:flex;
-    
+    border-radius: 0%;
+    width:120px;
+    height:25px;
+    font-size: 13px;
   }
 
   
   .sidebar {
-    width: 10%;
+    width:120px;
     color: white;
     text-align: center;
     padding: 5px;
-    font-size: 10px;
+    font-size: 12px;
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    
    }
-   .modal button {
+
+  .dark-mode-toggle {
+    padding: 2px 5px;
+    background-color: #007bff;
+    position:relative;
+    color: #fff;
+    margin-bottom:px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 12px;
+
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .app {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    font-size: 10px;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+  }
+  .modal form {
+    margin-left:50px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    width: 100%;
+    height:270px;
+    max-width: 350px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal input,
+  .modal textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size:12px;
+  }
+  
+  .headtask{
+    width: 100%;
+    max-width:320px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  .modal textarea {
+    width: 100%;
+    padding: 10px;
+    max-width:320px;
+    height:150px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+ 
+  .task-item{
+    width: 300px;
+    padding:4px;
+    font-size: 15px;
+   
+  }
+  .task-item button {
     padding: 2px 5px;
     background-color: #007bff;
     color: #fff;
@@ -300,8 +451,50 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
-    font-size:10px;
+    font-size: 11px;
   }
+  .sort-filter-buttons{
+    margin-left: 145px;
+  }
+  .filter-buttons{
+    padding: 2px 5px;
+    background-color: #007bff;
+    color: #fff;
+    margin:5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 11px;
+  }
+
+  .sidebar-buttons{
+    width: 60px;
+    padding:2px;
+    font-size: 11px;
+       
+  }
+  .sidebar-button{
+    padding:0px;
+    font-size: 10px;
+    border-radius: 0%;
+    width:110px;
+    height:25px;
+    font-size: 12px;
+  }
+
+  
+  .sidebar {
+    width:110px;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+   }
 
   .dark-mode-toggle {
     padding: 2px 5px;
@@ -309,11 +502,9 @@
     position:relative;
     color: #fff;
     margin-bottom:2px;
-    border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
-    font-size: 10px;
+    font-size: 11px;
 
-  }
-}
+  }}

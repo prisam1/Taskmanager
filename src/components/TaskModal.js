@@ -33,11 +33,13 @@ const AddTaskModal = ({ isOpen, closeModal, addTask, initialTask }) => {
           value={title}
           onChange={e => setTitle(e.target.value)}
           required
+          className='headtask'
         />
         <textarea
           placeholder="Task Description"
           value={description}
           onChange={e => setDescription(e.target.value)}
+          className='taskdesc'
         />
         <button type="submit">Save</button>
         <button type="button" className="cancel-button" onClick={closeModal}>
